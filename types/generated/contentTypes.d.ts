@@ -433,7 +433,7 @@ export interface ApiOmega3BlogOmega3Blog extends Struct.CollectionTypeSchema {
 }
 
 export interface ApiOmega3ContactUsOmega3ContactUs
-  extends Struct.SingleTypeSchema {
+  extends Struct.CollectionTypeSchema {
   collectionName: 'omega3_contact_uses';
   info: {
     displayName: 'omega3-contact-us';
@@ -447,7 +447,7 @@ export interface ApiOmega3ContactUsOmega3ContactUs
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    email: Schema.Attribute.Text;
+    email: Schema.Attribute.String;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -458,7 +458,7 @@ export interface ApiOmega3ContactUsOmega3ContactUs
     message: Schema.Attribute.RichText;
     name: Schema.Attribute.Text;
     organization: Schema.Attribute.Text;
-    phone: Schema.Attribute.Text;
+    phone: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
     query: Schema.Attribute.Text;
     region: Schema.Attribute.Text;

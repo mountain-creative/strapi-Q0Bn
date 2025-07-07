@@ -1,5 +1,5 @@
 {
-  "kind": "singleType",
+  "kind": "collectionType",
   "collectionName": "omega3_contact_uses",
   "info": {
     "singularName": "omega3-contact-us",
@@ -17,22 +17,22 @@
       "type": "text"
     },
     "phone": {
-      "type": "text"
+      "type": "string"
     },
     "email": {
+      "type": "string"
+    },
+    "query": {
       "type": "text"
     },
     "region": {
       "type": "text"
     },
-    "message": {
-      "type": "richtext"
-    },
     "marked": {
       "type": "string"
     },
-    "query": {
-      "type": "text"
+    "message": {
+      "type": "richtext"
     }
   }
 }
