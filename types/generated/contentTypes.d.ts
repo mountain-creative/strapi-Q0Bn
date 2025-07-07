@@ -401,6 +401,37 @@ export interface ApiCustomerSupportAgentTutorialCustomerSupportAgentTutorial
   };
 }
 
+export interface ApiOmega3BlogOmega3Blog extends Struct.CollectionTypeSchema {
+  collectionName: 'omega3_blogs';
+  info: {
+    displayName: 'omega3-blog';
+    pluralName: 'omega3-blogs';
+    singularName: 'omega3-blog';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    content: Schema.Attribute.RichText;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    description: Schema.Attribute.Text;
+    image_url: Schema.Attribute.Text;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::omega3-blog.omega3-blog'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    title: Schema.Attribute.Text & Schema.Attribute.Unique;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface PluginContentReleasesRelease
   extends Struct.CollectionTypeSchema {
   collectionName: 'strapi_releases';
@@ -911,6 +942,7 @@ declare module '@strapi/strapi' {
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
       'api::customer-support-agent-tutorial.customer-support-agent-tutorial': ApiCustomerSupportAgentTutorialCustomerSupportAgentTutorial;
+      'api::omega3-blog.omega3-blog': ApiOmega3BlogOmega3Blog;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;

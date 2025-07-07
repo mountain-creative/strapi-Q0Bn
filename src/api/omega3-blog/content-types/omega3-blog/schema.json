@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "omega3_blogs",
+  "info": {
+    "singularName": "omega3-blog",
+    "pluralName": "omega3-blogs",
+    "displayName": "omega3-blog"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "title": {
+      "type": "text",
+      "unique": true
+    },
+    "description": {
+      "type": "text"
+    },
+    "content": {
+      "type": "richtext"
+    },
+    "image_url": {
+      "type": "text"
+    }
+  }
+}
