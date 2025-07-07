@@ -1,0 +1,17 @@
+{
+  "kind": "collectionType",
+  "collectionName": "omega3_newsletter_subscribers",
+  "info": {
+    "singularName": "omega3-newsletter-subscriber",
+    "pluralName": "omega3-newsletter-subscribers",
+    "displayName": "omega3-newsletter-subscriber"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "email": {
+      "type": "string"
+    }
+  }
+}

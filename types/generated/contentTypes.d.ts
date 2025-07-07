@@ -468,6 +468,35 @@ export interface ApiOmega3ContactUsOmega3ContactUs
   };
 }
 
+export interface ApiOmega3NewsletterSubscriberOmega3NewsletterSubscriber
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'omega3_newsletter_subscribers';
+  info: {
+    displayName: 'omega3-newsletter-subscriber';
+    pluralName: 'omega3-newsletter-subscribers';
+    singularName: 'omega3-newsletter-subscriber';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    email: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::omega3-newsletter-subscriber.omega3-newsletter-subscriber'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface PluginContentReleasesRelease
   extends Struct.CollectionTypeSchema {
   collectionName: 'strapi_releases';
@@ -980,6 +1009,7 @@ declare module '@strapi/strapi' {
       'api::customer-support-agent-tutorial.customer-support-agent-tutorial': ApiCustomerSupportAgentTutorialCustomerSupportAgentTutorial;
       'api::omega3-blog.omega3-blog': ApiOmega3BlogOmega3Blog;
       'api::omega3-contact-us.omega3-contact-us': ApiOmega3ContactUsOmega3ContactUs;
+      'api::omega3-newsletter-subscriber.omega3-newsletter-subscriber': ApiOmega3NewsletterSubscriberOmega3NewsletterSubscriber;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;
