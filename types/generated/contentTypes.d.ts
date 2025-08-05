@@ -369,6 +369,38 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiCustomerSupportAgentMediaPostCustomerSupportAgentMediaPost
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'customer_support_agent_media_posts';
+  info: {
+    displayName: 'customer-support-agent-media-post';
+    pluralName: 'customer-support-agent-media-posts';
+    singularName: 'customer-support-agent-media-post';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    button_text: Schema.Attribute.String;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    description: Schema.Attribute.Text;
+    image_url: Schema.Attribute.Text;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::customer-support-agent-media-post.customer-support-agent-media-post'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    title: Schema.Attribute.Text;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiCustomerSupportAgentTutorialCustomerSupportAgentTutorial
   extends Struct.CollectionTypeSchema {
   collectionName: 'customer_support_agent_tutorials';
@@ -1006,6 +1038,7 @@ declare module '@strapi/strapi' {
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
+      'api::customer-support-agent-media-post.customer-support-agent-media-post': ApiCustomerSupportAgentMediaPostCustomerSupportAgentMediaPost;
       'api::customer-support-agent-tutorial.customer-support-agent-tutorial': ApiCustomerSupportAgentTutorialCustomerSupportAgentTutorial;
       'api::omega3-blog.omega3-blog': ApiOmega3BlogOmega3Blog;
       'api::omega3-contact-us.omega3-contact-us': ApiOmega3ContactUsOmega3ContactUs;
