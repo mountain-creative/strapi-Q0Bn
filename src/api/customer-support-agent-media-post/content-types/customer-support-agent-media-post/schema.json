@@ -4,7 +4,8 @@
   "info": {
     "singularName": "customer-support-agent-media-post",
     "pluralName": "customer-support-agent-media-posts",
-    "displayName": "customer-support-agent-media-post"
+    "displayName": "customer-support-agent-media-post",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -21,6 +22,9 @@
     },
     "button_text": {
       "type": "string"
+    },
+    "url": {
+      "type": "text"
     }
   }
 }

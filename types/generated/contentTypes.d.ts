@@ -373,6 +373,7 @@ export interface ApiCustomerSupportAgentMediaPostCustomerSupportAgentMediaPost
   extends Struct.CollectionTypeSchema {
   collectionName: 'customer_support_agent_media_posts';
   info: {
+    description: '';
     displayName: 'customer-support-agent-media-post';
     pluralName: 'customer-support-agent-media-posts';
     singularName: 'customer-support-agent-media-post';
@@ -398,6 +399,7 @@ export interface ApiCustomerSupportAgentMediaPostCustomerSupportAgentMediaPost
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    url: Schema.Attribute.Text;
   };
 }
 
